@@ -1,4 +1,4 @@
-package com.demo.upimesh.model;
+package com.demo.upimesh.repository;
 
 public interface AccountRepository {
 }
