@@ -7,7 +7,7 @@ import java.time.Instant;
 @Entity
 
 @Table(name="transactions",
-indexes={@Index(name="idx_packet_hash", columnList="packetHash", uniquw=true)})
+indexes={@Index(name="idx_packet_hash", columnList="packetHash", unique=true)})
 
 public class Transaction {
     @Id
@@ -52,7 +52,7 @@ public class Transaction {
     public void setAmount(BigDecimal amount) {this.amount = amount;}
 
     public Instant getSignedAt() {return signedAt;}
-    public void setSignedAt(Instant signedAt) {this.signedAt = signedAt}
+    public void setSignedAt(Instant signedAt) {this.signedAt = signedAt;}
 
     public Instant getSettledAt() {return settledAt;}
     public void setSettledAt(Instant settledAt) {this.settledAt = settledAt;}

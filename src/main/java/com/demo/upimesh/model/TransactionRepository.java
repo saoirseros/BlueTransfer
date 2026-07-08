@@ -1,4 +1,4 @@
-package com.demo.upimesh.repository;
+package com.demo.upimesh.model;
 
 public interface TransactionRepository {
 }
