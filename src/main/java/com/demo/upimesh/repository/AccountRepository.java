@@ -1,4 +1,6 @@
 package com.demo.upimesh.repository;
 
-public interface AccountRepository {
+import org.Springframework.data.jpa.repository.JpaRepository;
+
+public interface AccountRepository extends JpaRepository<Account, String> {
 }
