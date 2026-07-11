@@ -202,7 +202,6 @@ BlueTransfer uses hybrid encryption combining **RSA-OAEP** and **AES-256-GCM**.
 
 This approach provides confidentiality, integrity, and protection against packet tampering while remaining suitable for larger payloads than RSA alone.
 
----
 
 ### Duplicate Transaction Prevention
 
@@ -220,7 +219,6 @@ The backend uses an atomic idempotency mechanism to claim each packet before set
 
 This guarantees that every payment is processed exactly once, even under concurrent submissions.
 
----
 
 ### Replay Attack Protection
 
@@ -236,6 +234,7 @@ Each encrypted payment includes:
 During processing, the backend verifies packet freshness and rejects expired transactions. Since both the timestamp and nonce are protected by authenticated encryption, they cannot be modified without invalidating the encrypted payload.
 
 This prevents replay attacks while allowing legitimate repeated payments to be processed independently.
+
 ---
 
 ## File-by-file walkthrough
