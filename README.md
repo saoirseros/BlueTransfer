@@ -6,12 +6,16 @@ Imagine you're in a basement with zero connectivity. You send your friend ₹500
 
 This repository contains the backend services responsible for encryption, packet processing, idempotent settlement, and transaction management, along with a software simulator that models the Bluetooth Mesh network so the complete workflow can be demonstrated on a single machine without requiring physical Bluetooth hardware.
 
+<img width="1530" height="545" alt="image" src="https://github.com/user-attachments/assets/7a8df101-2ed6-47f9-95f3-1153e7b81623" />
+<img width="1523" height="518" alt="image" src="https://github.com/user-attachments/assets/23fe7dc4-5c95-4a85-807b-215e0c0fb978" />
+
+
 ---
 
 ## Table of Contents
 
 1. [Key Engineering Highlights](#key-engineering-highlights)
-2. [Transaction Processing Pipeline](#transaction-processing-pipeline)
+2. [Workflow](#workflow)
 3. [Architecture](#architecture)
 4. [Quick Start](#quick-start)
 5. [Engineering Challenges](#engineering-challenges)
@@ -36,9 +40,10 @@ BlueTransfer demonstrates several core concepts in distributed systems, secure t
 
 - **Concurrent Transaction Processing** — Thread-safe processing and transactional settlement ensure consistency even when multiple bridge nodes submit identical packets simultaneously.
 
+
 ---
 
-## Transaction Processing Pipeline
+## Workflow
 
 Every payment follows the workflow below before being successfully settled.
 
@@ -101,6 +106,9 @@ Once uploaded to the backend, every packet passes through several validation sta
 ### Transaction Settlement
 
 Validated payments are processed atomically within a database transaction, ensuring account balances and transaction records remain consistent even under concurrent requests.
+
+<img width="1496" height="537" alt="image" src="https://github.com/user-attachments/assets/6c262a09-e885-4841-81e0-3d3da8832048" />
+
 
 ---
 
