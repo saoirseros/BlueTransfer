@@ -1,13 +1,31 @@
 # BlueTransfer - Offline Digital Payment System Using Bluetooth Mesh
 
+[![Live Demo](https://img.shields.io/badge/LIVE%20DEMO-RAILWAY-blue?style=for-the-badge)](https://bluetransfer-production.up.railway.app)
+[![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge)]()
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-green?style=for-the-badge)]()
+
 A Spring Boot backend that demonstrates **mesh-routed deferred digital payments** over a simulated Bluetooth Mesh network.
 
 Imagine you're in a basement with zero connectivity. You send your friend ₹500. Your phone encrypts the payment, broadcasts it to nearby devices, and the packet hops from device to device until one eventually regains internet connectivity. That device acts as a bridge node and securely uploads the encrypted packet to the backend, where it is decrypted, deduplicated, validated, and settled.
 
 This repository contains the backend services responsible for encryption, packet processing, idempotent settlement, and transaction management, along with a software simulator that models the Bluetooth Mesh network so the complete workflow can be demonstrated on a single machine without requiring physical Bluetooth hardware.
 
+---
+
+## Snapshots
+
+### Dashboard Overview
+
 <img width="1530" height="545" alt="image" src="https://github.com/user-attachments/assets/7a8df101-2ed6-47f9-95f3-1153e7b81623" />
 <img width="1523" height="518" alt="image" src="https://github.com/user-attachments/assets/23fe7dc4-5c95-4a85-807b-215e0c0fb978" />
+
+*A live overview of the mesh network showing devices, account balances, active bridge node, and payment controls.*
+
+### Transaction Settlement
+
+<img width="1496" height="537" alt="image" src="https://github.com/user-attachments/assets/6c262a09-e885-4841-81e0-3d3da8832048" />
+
+*Shows successful end-to-end payment settlement after the encrypted packet reaches a bridge node with internet connectivity.*
 
 
 ---
@@ -106,9 +124,6 @@ Once uploaded to the backend, every packet passes through several validation sta
 ### Transaction Settlement
 
 Validated payments are processed atomically within a database transaction, ensuring account balances and transaction records remain consistent even under concurrent requests.
-
-<img width="1496" height="537" alt="image" src="https://github.com/user-attachments/assets/6c262a09-e885-4841-81e0-3d3da8832048" />
-
 
 ---
 
